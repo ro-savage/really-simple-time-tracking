@@ -8,10 +8,12 @@
           outline: none;
         }
 
+        #container {
+          width: 460px;
+        }
         #timer-container {
           text-align: right;
         }
-
 
         #time-table {
           border: 1px solid black;
@@ -30,6 +32,15 @@
           height: 30px;
         }
 
+        #entries-table {
+          border: 1px solid black;
+          border-collapse: collapse;
+        }
+
+        #entries-table td, #entries-table th {
+          border: 1px solid black;
+        }
+
       </style>
 
       <script src="moment.min.js"></script>
@@ -39,10 +50,8 @@
         <div id="timer-container">
           <span id="timer-counter"></span>
           <button id="start-timer-button">Start</button>
-          <button id="diff-end-button">Diff</button>
           <button id="send-notification"">Notify me!</button>
         </div>
-        <div id="diff-container" style="display: none;"><input type="time" id="diff-time" /></div>
         <table id="time-table">
           <thead>
             <tr>
@@ -53,6 +62,15 @@
             <tr>
               <td id="cell-today"></td><td id="cell-week"></td><td id="cell-month"></td>
             </tr>
+          </tbody>
+        </table>
+        <table id="entries-table">
+          <thead>
+            <tr>
+              <th>Date</td><th>Start</td><th>End</td>
+            </tr>
+          </thead>
+          <tbody id="entries-table-body">
           </tbody>
         </table>
         <script src="popup.js"></script>
